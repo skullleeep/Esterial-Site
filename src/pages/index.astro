@@ -1,51 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SplashScreen from '../components/SplashScreen.astro';
 import Hero_2 from "../images/hero-2.jpg"
 import Hero_3 from "../images/hero-3.jpg"
 ---
 
 <Layout>
-<!-- Hero Section -->
-<section class="hero d-flex align-items-center justify-content-center">
-	<div class="container hero-content">
-		<h1 class="display-4 fw-bold">ONE OF A KIND BIRTHDAY</h1>
-		<p class="lead">A film crew, in a house at your choice, filming a surprise party</p>
-		<a href="#" class="btn btn-danger me-2">Button</a>
-		<a href="#" class="btn btn-warning">Button</a>
-	</div>
-</section>
+	<SplashScreen />
 
-<!-- Features Section -->
-<section class="container py-5">
-	<div class="row text-center">
-		<div class="col-md-6">
-			<img src={Hero_2.src} class="img-fluid rounded">
+	<!-- Hero Section -->
+	<section class="hero d-flex align-items-center justify-content-center">
+		<div class="container hero-content">
+			<h1 class="display-4 fw-bold">ONE OF A KIND BIRTHDAY</h1>
+			<p class="lead">A film crew, in a house at your choice, filming a surprise party</p>
+			<a href="#" class="btn btn-danger me-2">Button</a>
+			<a href="#" class="btn btn-warning">Button</a>
 		</div>
-		<div class="col-md-6">
-			<img src={Hero_3.src} class="img-fluid rounded">
+	</section>
+
+	<!-- Features Section -->
+	<section class="container py-5">
+		<div class="row text-center">
+			<div class="col-md-6">
+				<img src={Hero_2.src} class="img-fluid rounded">
+			</div>
+			<div class="col-md-6">
+				<img src={Hero_3.src} class="img-fluid rounded">
+			</div>
 		</div>
-	</div>
-	<div class="row text-center mt-5 feature-icons">
-		<div class="col-md-3">
-			<i class="bi bi-camera"></i>
-			<h5>Title</h5>
-			<p>Short description of the feature.</p>
+		<div class="row text-center mt-5 feature-icons">
+			<div class="col-md-3">
+				<i class="bi bi-camera"></i>
+				<h5>Title</h5>
+				<p>Short description of the feature.</p>
+			</div>
+			<div class="col-md-3">
+				<i class="bi bi-film"></i>
+				<h5>Title</h5>
+				<p>Short description of the feature.</p>
+			</div>
+			<div class="col-md-3">
+				<i class="bi bi-lightbulb"></i>
+				<h5>Title</h5>
+				<p>Short description of the feature.</p>
+			</div>
+			<div class="col-md-3">
+				<i class="bi bi-people"></i>
+				<h5>Title</h5>
+				<p>Short description of the feature.</p>
+			</div>
 		</div>
-		<div class="col-md-3">
-			<i class="bi bi-film"></i>
-			<h5>Title</h5>
-			<p>Short description of the feature.</p>
-		</div>
-		<div class="col-md-3">
-			<i class="bi bi-lightbulb"></i>
-			<h5>Title</h5>
-			<p>Short description of the feature.</p>
-		</div>
-		<div class="col-md-3">
-			<i class="bi bi-people"></i>
-			<h5>Title</h5>
-			<p>Short description of the feature.</p>
-		</div>
-	</div>
-</section>
+	</section>
 </Layout>
