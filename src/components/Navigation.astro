@@ -2,21 +2,47 @@
 import Logo from "../assets/esterial-logo-universal.svg"
 ---
 
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark px-5 border-bottom border-secondary">
-    <a class="navbar-brand" href="#">
-        <img src={Logo.src} alt="Esterial" height="70">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link text-light" href="#">Products</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="#">Solutions</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="#">Community</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="#">Resources</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="#">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="#">Contact</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+    <div class="container">
+        <!-- Left Side (Navigation Links) -->
+        <div class="d-flex align-items-center order-lg-0">
+            <ul class="navbar-nav d-none d-lg-flex">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
+            </ul>
+        </div>
+
+        <!-- Center (Logo) -->
+        <a class="navbar-brand mx-auto order-lg-1" href="#">
+            <img src={Logo.src} alt="Esterial" class="logo">
+        </a>
+
+        <!-- Right Side (Navigation Links) -->
+        <div class="d-flex align-items-center order-lg-2">
+            <ul class="navbar-nav d-none d-lg-flex">
+                <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggler order-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto text-center d-lg-none">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
+

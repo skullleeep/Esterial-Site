@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=MonteCarlo');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --main-color:#1e1e1e;
@@ -8,16 +9,19 @@
     --yellow-color: #ffcc00;
 }
 
+*{
+    font-family: 'Raleway';
+}
+
 [data-bs-theme="dark"] {
     background-color: var(--main-color) !important;
 }
-
 
 .nav-link.active {
     color: var(--secondary-color) !important;
 }
 
-
+/* ------------------------ SPLASH SCREEN ------------------------ */
 .splash-screen {
     position: fixed;
     top: 0;
@@ -71,7 +75,39 @@
     100% { transform: scale(1.2); }
 }
 
+/* ------------------------ NAVBAR ------------------------ */
+.navbar {
+    padding: 15px 0;
+    position: relative;
+}
 
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    height: 80px; /* Adjust as needed */
+}
+
+
+/* Ensures the logo stays centered on mobile */
+@media (max-width: 991px) {
+    .navbar-brand {
+        position: static;
+        transform: none;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+
+/* ------------------------ HOME PAGE ------------------------ */
 .hero {
     position: relative;
     height: 90vh;
