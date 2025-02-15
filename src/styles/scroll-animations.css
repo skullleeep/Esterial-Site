@@ -1,0 +1,52 @@
+/* Base class (Initial State: Hidden) */
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade In */
+.fade-in {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Slide Left (Without Layout Shift) */
+.slide-left {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    animation: slideLeftAnim 0.8s ease-out;
+}
+
+@keyframes slideLeftAnim {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Slide Right (Without Layout Shift) */
+.slide-right {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    animation: slideRightAnim 0.8s ease-out;
+}
+
+@keyframes slideRightAnim {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Zoom In (Without Layout Shift) */
+.zoom-in {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    animation: zoomInAnim 0.8s ease-out;
+}
+
+@keyframes zoomInAnim {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
