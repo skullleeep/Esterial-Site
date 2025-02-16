@@ -1,28 +1,29 @@
 ---
 import Logo from "../assets/esterial-logo-universal.svg"
+import { getRelativeLocaleUrl } from 'astro:i18n';
 ---
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dimgray">
+    <div class="container-small">
         <!-- Left Side (Navigation Links) -->
-        <div class="d-flex align-items-center order-lg-0">
+        <div class="nav-left order-lg-0">
             <ul class="navbar-nav d-none d-lg-flex">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href={getRelativeLocaleUrl('en')}>Home</a></li>
+                <li class="nav-item"><a class="nav-link" href={getRelativeLocaleUrl('en', "about")}>About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
             </ul>
         </div>
 
         <!-- Center (Logo) -->
-        <a class="navbar-brand mx-auto order-lg-1" href="#">
+        <a class="navbar-brand order-lg-1" href="#">
             <img src={Logo.src} alt="Esterial" class="logo">
         </a>
 
         <!-- Right Side (Navigation Links) -->
-        <div class="d-flex align-items-center order-lg-2">
+        <div class="nav-right order-lg-2 ">
             <ul class="navbar-nav d-none d-lg-flex">
-                <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Corporate</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
         </div>
@@ -36,10 +37,10 @@ import Logo from "../assets/esterial-logo-universal.svg"
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto text-center d-lg-none">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Corporate</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
         </div>

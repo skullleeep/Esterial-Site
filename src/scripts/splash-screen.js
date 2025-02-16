@@ -4,7 +4,7 @@ const splashScreen = document.getElementById('splashScreen');
 if (localStorage.getItem("splashSeen")) {
     // Hide splash screen instantly and show homepage
     splashScreen.style.display = "none";
-}
+} 
 
 //On click remove splash screen
 splashScreen.addEventListener("click", () => {

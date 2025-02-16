@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 let animType = entry.target.dataset.animation || "fade-in"; // Default animation
-                entry.target.classList.add(animType);
+                let delay = entry.target.dataset.delay || "0s"; // Default delay
+
+                setTimeout(() => {
+                    entry.target.classList.add(animType);
+                }, parseFloat(delay) * 1000); // Convert delay to milliseconds
+
                 observer.unobserve(entry.target); // Ensures animation only runs once
             }
         });

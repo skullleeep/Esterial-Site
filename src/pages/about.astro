@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import About_1 from "../images/about-us-1.jpg"
+import About_2 from "../images/about-us-2.jpg"
+---
+
+<Layout>
+    <!-- About Section -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 animate-on-scroll" data-animation="slide-left" data-delay="0.3">
+                <h2 class="text-secondary">Who We Are</h2>
+                <p>Esterial is an innovative event-planning company that turns your special moments into cinematic masterpieces. Our expert team creates immersive, Hollywood-style experiences that make any occasion truly unforgettable.</p>
+            </div>
+            <div class="col-md-6 animate-on-scroll" data-animation="slide-right" data-delay="0.5">
+                <!-- <Image src={About_1} width={About_1.width / 4} height={About_1.height / 4} loading="eager" alt="Esterial Team" class="img-fluid rounded" /> -->
+				 <img src={About_1.src} alt="Esterial Team" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hollywood Movie Events Section -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-2 animate-on-scroll" data-animation="slide-right" data-delay="0.3">
+                <h2 class="text-secondary">Hollywood Movie Events</h2>
+                <p>Imagine a birthday party that turns into an action-packed adventure or a surprise proposal that feels straight out of a romantic film. With Esterial, your event is not just a gathering – it’s a cinematic experience.</p>
+            </div>
+            <div class="col-md-6 order-md-1 animate-on-scroll" data-animation="slide-left" data-delay="0.5">
+                <!-- <Image src={About_2} width={About_2.width / 4} height={About_2.height / 4} loading="eager" alt="Hollywood Movie Event" class="img-fluid rounded" /> -->
+				<img src={About_2.src} alt="Hollywood Movie Event" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+</Layout>

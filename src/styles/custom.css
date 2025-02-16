@@ -13,6 +13,16 @@
     font-family: 'Raleway';
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+    
+footer {
+    margin-top: auto;
+}
+
 [data-bs-theme="dark"] {
     background-color: var(--main-color) !important;
 }
@@ -55,6 +65,7 @@
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 1s;
     will-change: opacity;
+    padding-right: 9px;
 }
 
 /* Entry animation */
@@ -79,6 +90,10 @@
 .navbar {
     padding: 15px 0;
     position: relative;
+    -webkit-box-shadow: 0px 1px 20px 9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px0px 1px 20px 9px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 20px 9px rgba(0,0,0,0.3);
+    z-index: 1;
 }
 
 .navbar-brand {
@@ -88,8 +103,33 @@
 }
 
 .logo {
-    height: 80px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
 }
+
+.container-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 750px; /* Adjust based on your preference */
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Flex grow for left & right nav to balance spacing */
+.nav-left, .nav-right {
+    flex: 1; /* Ensures both sides take equal space */
+    display: flex;
+    justify-content: right;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
 
 
 /* Ensures the logo stays centered on mobile */
@@ -106,6 +146,52 @@
     }
 }
 
+/* ------------------------ FOOTER ------------------------ */
+.footer-shadow{
+    -webkit-box-shadow: 0px 1px 20px 9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 20px 9px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 20px 9px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    color: dimgray;
+    text-align: center; /* Center text content */
+    position: relative;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: start; /* Center the text */
+    gap: 1em; /* Space between text */
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 15px; /* Space between icons */
+    margin-bottom: 15px; /* Space above text */
+}
+
+.social-icons a {
+    color: inherit;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    color: var(--secondary-color); /* Change color on hover */
+    transform: scale(1.2); /* Slight pop-out effect */
+}
 
 /* ------------------------ HOME PAGE ------------------------ */
 .hero {
@@ -131,6 +217,7 @@
 
 .hero-special-text {
     text-shadow: 0 4px 6px #1e1e1e;
+    font-size: 6em;
 }
 
 .feature-icons i {
