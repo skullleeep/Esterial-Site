@@ -15,7 +15,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
         </div>
 
         <!-- Center (Logo) -->
-        <a class="navbar-brand order-lg-1" href="#">
+        <a class="navbar-brand order-lg-1" href={getRelativeLocaleUrl('en')}>
             <img src={Logo.src} alt="Esterial" class="logo">
         </a>
 
