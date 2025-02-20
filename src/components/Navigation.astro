@@ -10,7 +10,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item"><a class="nav-link" href={getRelativeLocaleUrl('en')}>Home</a></li>
                 <li class="nav-item"><a class="nav-link" href={getRelativeLocaleUrl('en', "about")}>About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href={getRelativeLocaleUrl('en', "events")}>Events</a></li>
             </ul>
         </div>
 

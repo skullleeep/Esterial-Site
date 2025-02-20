@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import About_1 from "../images/about-us-1.jpg"
+import About_2 from "../images/about-us-2.jpg"
+---
+
+<Layout>
+    <section class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold animate-on-scroll" data-animation="fade-in" data-delay="0.5">Our Events</h2>
+            <p class="text-muted animate-on-scroll" data-animation="fade-in" data-delay="0.7">
+                Discover our exclusive Hollywood-style event experiences.
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 animate-on-scroll" data-animation="fade-in" data-delay="1">
+                <div class="card shadow-lg border-0">
+                    <img src={About_2.src} class="card-img-top" alt="${event.title}">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold">Mystery Birthday Surprise</h4>
+                        <p class="text-muted">A thrilling prank-based birthday party, professionally filmed.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 animate-on-scroll" data-animation="fade-in" data-delay="1.2">
+                <div class="card shadow-lg border-0">
+                    <img src={About_1.src} class="card-img-top" alt="${event.title}">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold">Corporate Gala Night</h4>
+                        <p class="text-muted">A high-end corporate gathering with a cinematic experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 animate-on-scroll" data-animation="fade-in" data-delay="1.2">
+                <div class="card shadow-lg border-0">
+                    <img src={About_1.src} class="card-img-top" alt="${event.title}">
+                    <div class="card-body text-center">
+                        <h4 class="fw-bold">Corporate Gala Night</h4>
+                        <p class="text-muted">A high-end corporate gathering with a cinematic experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+</Layout>
