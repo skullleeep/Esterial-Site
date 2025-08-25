@@ -224,3 +224,13 @@ footer {
     font-size: 2rem;
     color: var(--secondary-color);
 }
+
+/* ------------------------ RENT MY DRESS PAGE ------------------------ */
+/* Card polish */
+.dress-card .card-img-top {
+aspect-ratio: 4 / 5;
+object-fit: cover;
+}
+.price-badge {
+font-weight: 600;
+}
