@@ -10,8 +10,8 @@ export default defineConfig({
            prefixDefaultLocale: false
         }
     },
-    output: 'server',
-    adapter: node({
-    mode: 'standalone',
-    })
+    ////output: 'server',
+    //adapter: node({
+    //mode: 'standalone',
+    //})
 });

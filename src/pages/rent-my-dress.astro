@@ -1,99 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Sillhouette from "../images/rent-my-dress/girl_sillhouette.svg"
 ---
 
-<Layout>
-    <main class="py-5">
-        <div class="container" style="max-width: 980px;">
-        <div class="text-center mb-4">
-            <h1 class="fw-bold animate-on-scroll fade-in" data-animation="fade-in" data-delay="0.2">
-            Rent My Dress
-            </h1>
-            <p class="text-secondary animate-on-scroll fade-in-up" data-animation="fade-in-up" data-delay="0.4">
-            Browse our curated selection of luxury dresses available for rent.
-            </p>
+  <Layout>
+    <h1>Rent Your Perfect Outfit</h1>
+    <div class="info-box">
+      Start with a dress, then add a bag and shoes if you like.<br>
+      You can mix Premium and VIP. To select nothing, choose "X".
+    </div>
+
+    <div class="rent-container">
+      <!-- Silhouette & Controls -->
+      <div class="silhouette-wrapper">
+        <img src={Sillhouette.src} alt="Silhouette"/>
+
+
+        <div class="control dress">
+        <span class="arrow" data-action="dress-left">&#8592;</span>
+        <span id="dress-text">None</span>
+        <span class="arrow" data-action="dress-right">&#8594;</span>
         </div>
 
-        <!-- Grid -->
-        <div id="dress-grid" class="row g-4">
-            <!-- Cards injected by script -->
+        <div class="control bag disabled">
+        <span class="arrow" data-action="bag-left">&#8592;</span>
+        <span id="bag-text">None</span>
+        <span class="arrow" data-action="bag-right">&#8594;</span>
         </div>
 
-        <!-- Loading state -->
-        <div id="loading" class="text-center text-secondary mt-5">Loading dresses…</div>
-        <div id="error" class="text-center text-danger mt-4 d-none">Failed to load dresses.</div>
+        <div class="control shoes disabled">
+        <span class="arrow" data-action="shoes-left">&#8592;</span>
+        <span id="shoes-text">None</span>
+        <span class="arrow" data-action="shoes-right">&#8594;</span>
         </div>
-    </main>
+      </div>
 
-    <!-- Dresses loader (client-side for real-time; polls every 60s) -->
-    <script>
-        const grid = document.getElementById('dress-grid');
-        const loading = document.getElementById('loading');
-        const errorBox = document.getElementById('error');
+      <!-- Preview -->
+      <div class="preview-box">
+        <h2>Example Look</h2>
+        <img id="preview-img" src="/images/placeholder.jpg" alt="Example" />
+      </div>
+    </div>
 
-        function renderDresses(dresses) {
-            if (!Array.isArray(dresses)) dresses = [];
-            if (dresses.length === 0) {
-                grid.innerHTML = '<div class="col-12 text-center text-secondary">No dresses yet.</div>';
-                return;
-            }
+    <!-- Quote Form -->
+    <div class="quote-form">
+      <h3>Request a Quote</h3>
+      <input type="text" id="name" placeholder="Your Name" />
+      <input type="tel" id="phone" placeholder="Phone Number" />
+      <button onclick="sendQuote()">Send Quote</button>
+    </div>
+  </Layout>
 
-            grid.innerHTML = dresses.map((dress, idx) => {
-                const carouselId = `dress-carousel-${dress.id || idx}`;
-                const items = (dress.images && dress.images.length ? dress.images : ['/assets/placeholder.jpg'])
-                .map((img, i) => `
-                    <div class="carousel-item ${i === 0 ? 'active' : ''}">
-                    <img src="${img}" class="d-block w-100 card-img-top rounded-top" alt="${dress.title || 'Dress'}">
-                    </div>
-                `).join('');
-
-                // Staggered delay (seconds) for scroll animations
-                const delay = (0.1 * (idx % 6) + 0.3).toFixed(1);
-
-                return `
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card dress-card bg-body-tertiary text-dark h-100 shadow-lg animate-on-scroll"
-                        data-animation="fade-in" data-delay="${delay}">
-                    <div id="${carouselId}" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-inner">${items}</div>
-                        ${ (dress.images && dress.images.length > 1) ? `
-                        <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>` : ``}
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title mb-1">${dress.title ?? ''}</h5>
-                        <p class="card-text text-secondary mb-2">${dress.description ?? ''}</p>
-                        ${dress.priceRange ? `<span class="badge bg-primary price-badge">${dress.priceRange}</span>` : ''}
-                    </div>
-                    </div>
-                </div>
-                `;
-            }).join('');
-        }
-
-        async function loadDresses() {
-            try {
-                loading.classList.remove('d-none');
-                errorBox.classList.add('d-none');
-                const res = await fetch('/api/dresses.json', { cache: 'no-store' });
-                const data = await res.json();
-                renderDresses(data);
-            } catch (e) {
-                console.error(e);
-                errorBox.classList.remove('d-none');
-            } finally {
-                loading.classList.add('d-none');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadDresses();
-        });
-    </script>
-</Layout>
+<script>
+	import "../scripts/outfit-selection.js"
+</script>
