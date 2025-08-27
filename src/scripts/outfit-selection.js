@@ -35,7 +35,16 @@ function changeOption(type, dir) {
 function updatePreview() {
     const combo = `${options[state.dress]}_${options[state.bag]}_${options[state.shoes]}`;
     const fileName = combo.replace(/\s+/g, '-').toLowerCase();
-    document.getElementById('preview-img').src = `/images/examples/${fileName}.jpg`;
+
+    const img = document.getElementById('preview-img');
+
+    // If all options are "None", show placeholder
+    if (fileName === "none_none_none") {
+        img.src = `/outfits/placeholder.jpg`;
+        return;
+    }
+
+    img.src = `/outfits/${fileName}.jpg`;
 }
 
 function sendQuote() {

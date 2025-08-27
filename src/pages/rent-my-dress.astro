@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Sillhouette from "../images/rent-my-dress/girl_sillhouette.svg"
+import Sillhouette from "../images/girl_sillhouette.svg"
 ---
 
   <Layout>
-    <h1>Rent Your Perfect Outfit</h1>
-    <div class="info-box">
+    <h1 class="text-secondary animate-on-scroll" data-animation="fade-in" data-delay="0">Rent Your Perfect Outfit</h1>
+    <div class="info-box animate-on-scroll" data-animation="zoom-in" data-delay="0.1">
       Start with a dress, then add a bag and shoes if you like.<br>
-      You can mix Premium and VIP. To select nothing, choose "X".
+      You can mix Premium and VIP. To select nothing, choose "None".
     </div>
 
     <div class="rent-container">
       <!-- Silhouette & Controls -->
-      <div class="silhouette-wrapper">
+      <div class="silhouette-wrapper animate-on-scroll" data-animation="fade-in" data-delay="0.3">
         <img src={Sillhouette.src} alt="Silhouette"/>
 
 
@@ -36,14 +36,15 @@ import Sillhouette from "../images/rent-my-dress/girl_sillhouette.svg"
       </div>
 
       <!-- Preview -->
-      <div class="preview-box">
+      <div class="preview-box animate-on-scroll" data-animation="slide-right" data-delay="0.7">
         <h2>Example Look</h2>
-        <img id="preview-img" src="/images/placeholder.jpg" alt="Example" />
+        <img id="preview-img" src="/outfits/placeholder.jpg" alt="Example" />
       </div>
     </div>
 
+    <hr class="animate-on-scroll text-secondary" data-animation="fade-in" data-delay="0.7">
     <!-- Quote Form -->
-    <div class="quote-form">
+    <div class="quote-form animate-on-scroll" data-animation="zoom-in" data-delay="0.7">
       <h3>Request a Quote</h3>
       <input type="text" id="name" placeholder="Your Name" />
       <input type="tel" id="phone" placeholder="Phone Number" />
